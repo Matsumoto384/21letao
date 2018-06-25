@@ -1,0 +1,12 @@
+.body_bg {
+  background-color: #222D32;
+}
+
+.panel-primary .panel-heading{
+  padding:0;
+  height: 50px;
+  line-height: 50px;
+}
+.margin150{
+  margin-top:150px;
+}
