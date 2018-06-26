@@ -93,7 +93,6 @@ ul{
 .lt-main{
   width: 100%;
   height: 1000px;
-  background-color: pink;
   padding-left:180px;
   padding-top:50px;
   transition:all 1s;
@@ -125,4 +124,9 @@ ul{
 }
 .lt-main .breadcrumb{
   margin-top:20px;
+}
+.echarts1,
+.echarts2{
+  width: 48%;
+  height: 400px;
 }

@@ -7,14 +7,14 @@
 //  登录页面的信息也是没有登录，会一直跳转登录页面
 //  所以要把登录页面排除在外
 if(location.href.indexOf('login.html') === -1){
-  console.log(1);
+
   //如果索引为-1 ，说明地址栏参数中没有login.html 需要登录拦截
   $.ajax({
     type:'get',
     url:'/employee/checkRootLogin',
     dataType:'json',
     success:function(info){
-      console.log(2);
+
       console.log(info);
       if(info.error === 400){
         //  用户没登录,拦截
@@ -23,9 +23,6 @@ if(location.href.indexOf('login.html') === -1){
       if(info.success){
         console.log('用户登录')
       }
-    },
-    error:function(info){
-      console.log(info);
     }
   })
 }
