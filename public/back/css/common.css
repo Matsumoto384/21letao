@@ -130,3 +130,10 @@ ul{
   width: 48%;
   height: 400px;
 }
+/*让所有表格th和td水平垂直居中*/
+.table.table-bordered th,
+.table.table-bordered td{
+  text-align:center;
+  /*表格中垂直居中*/
+  vertical-align:middle;
+}

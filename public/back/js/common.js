@@ -15,7 +15,6 @@ if(location.href.indexOf('login.html') === -1){
     dataType:'json',
     success:function(info){
 
-      console.log(info);
       if(info.error === 400){
         //  用户没登录,拦截
         location.href="login.html";
