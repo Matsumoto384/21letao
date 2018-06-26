@@ -3,8 +3,12 @@
  */
 
 $(function(){
-  var currentPage = 1;
-  var pageSize= 5;
+  var currentPage = 1;//当前页
+  var pageSize= 5;//每页多少条
+  var currentId = null;
+  var isDelete = null;
+
+  //  1.通过ajax获取数据，通过模板引擎渲染
   render();
   function render(){
     $.ajax({
@@ -38,9 +42,36 @@ $(function(){
       }
     })
   }
-//  1.通过ajax获取数据，通过模板引擎渲染
 
+//  2.启用禁用功能，点击按钮，弹出模态框
+  $('tbody').on('click','.btn',function(){
+  //  让模态框显示
+    $('#userModal').modal('show');
+    //点击时候，将当前选中的用户id记录在全局currentId
+    currentId = $(this).parent().data('id');
+  //  点击禁用按钮，让用户变成禁用状态 即 isDelete：0
+    isDelete = $(this).hasClass('btn-danger') ? 0 :1;
+  })
 
+//  点击确定按钮更数据
+  $('#submitBtn').click(function(){
+    $.ajax({
+      type:'post',
+      url:'/user/updateUser',
+      data:{
+        id:currentId,
+        isDelete:isDelete,
+      },
+      dataType:'json',
+      success:function(info){
+        console.log(info);
+      //  1.关闭模态框
+        $('#userModal').modal('hide');
+      //  2.重新渲染页面
+        render();
+      }
+    })
+  })
 
 
 
