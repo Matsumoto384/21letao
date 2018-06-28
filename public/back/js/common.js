@@ -26,7 +26,7 @@ if(location.href.indexOf('login.html') === -1){
   })
 }
 
-//实现进度条功能（给ajax请求加），注意要给所有的ajax加
+//6.实现进度条功能（给ajax请求加），注意要给所有的ajax加
 //发送ajax开启进度条，ajax结束，关闭进度条
 
 //第一个ajax发送时，开启进度条
