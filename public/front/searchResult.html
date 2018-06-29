@@ -2,9 +2,129 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>乐淘商城</title>
+
+  <link rel="icon" href="./favicon.ico">
+  <!--引入font-awesome字体图标-->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
+  <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/searchResult.css">
 </head>
 <body>
+
+<!--全屏容器-->
+<div class="lt-container">
+  <!--头部-->
+  <div class="lt-header">
+    <a href="javascript:history.go(-1);" class="icon-left">
+      <i class="mui-icon mui-icon-back"></i>
+    </a>
+    <h3>乐淘云购</h3>
+
+  </div>
+  <!--主体-->
+  <div class="lt-main">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--搜索框-->
+        <div class="lt-search">
+          <input class="search-int" type="text" placeholder="请输入搜索关键字">
+          <button class="search-btn mui-btn mui-btn-primary">搜索</button>
+        </div>
+
+        <!--排序-->
+        <div class="lt-sort">
+          <a href="javascript:;">上架时间 <i class="fa fa-angle-down"></i></a>
+          <a data-type="price" href="javascript:;">价格 <i class="fa fa-angle-down"></i></a>
+          <a data-type="num" href="javascript:;">库存 <i class="fa fa-angle-down"></i></a>
+          <a href="javascript:;">折扣 <i class="fa fa-angle-down"></i></a>
+        </div>
+
+        <!--商品-->
+        <div class="lt-product">
+          <!--加载的样式-->
+          <div class="loading"></div>
+
+          <ul>
+
+            <li class="item-product">
+              <a href="#">
+                <img src="imgs/product.jpg" alt="">
+                <p class="mui-ellipsis-2">阿迪达斯男鞋最新款2018潮牌</p>
+                <p>
+                  <span class="price">￥600</span>
+                  <span class="oldprice">￥780</span>
+                </p>
+                <button class="mui-btn mui-btn-primary">立即购买</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!--底部-->
+  <div class="lt-footer">
+    <ul class="mui-clearfix">
+      <li>
+        <a href="index.html">
+          <i class="fa fa-home"></i>
+          <p>首页</p>
+        </a>
+      </li>
+      <li>
+        <a href="category.html">
+          <i class="fa fa-bars"></i>
+          <p>分类页</p>
+        </a>
+      </li>
+      <li>
+        <a href="cart.html">
+          <i class="fa fa-shopping-cart"></i>
+          <p>购物车</p>
+        </a>
+      </li>
+      <li>
+        <a href="user.html">
+          <i class="fa fa-user"></i>
+          <p>会员中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/common.js"></script>
+<script src="js/searchResult.js"></script>
+
+<script type="text/template" id="tmp">
+
+  <ul>
+    {{each data v i}}
+      <li class="item-product">
+        <a href="#">
+          <img src="{{v.pic[0].picAddr}}" alt="">
+          <p class="mui-ellipsis-2">{{v.proName}}</p>
+          <p>
+            <span class="price">￥{{v.price}}</span>
+            <span class="oldprice">￥{{v.oldPrice}}</span>
+          </p>
+          <button class="mui-btn mui-btn-primary">立即购买</button>
+        </a>
+      </li>
+    {{/each}}
+  </ul>
+
+</script>
 
 </body>
 </html>

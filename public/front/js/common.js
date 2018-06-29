@@ -14,3 +14,25 @@ $(function(){
 
 
 })
+
+//解析地址栏参数，用对象存储
+function getSearchObj(name){
+  //获取地址后拼接的数据
+  var search = location.search;
+  //中文解码
+  search = decodeURI(search);
+  //去掉'?'
+  search = search.slice(1);
+  //得到键值对的数组['name=张三','age=18']
+  var arr = search.split('&');
+
+  var obj = [];
+  arr.forEach(function(v,i){
+    var key = v.split('=')[0];
+    var value = v.split('=')[1];
+    obj[key] = value;
+  });
+
+  return obj[name];
+}
+

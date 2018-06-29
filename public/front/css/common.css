@@ -100,3 +100,56 @@ html,body{
 .lt-footer ul li.current p{
   color:orange;
 }
+
+/*搜索框*/
+
+.lt-search{
+  padding: 10px;
+  position: relative;
+}
+.lt-search .search-int{
+  height: 34px;
+  border: 1px solid #007aff;
+  border-radius:5px;
+  font-size:12px;
+  margin: 0;
+}
+.lt-search .search-btn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius:0 5px 5px 0;
+}
+
+/*商品*/
+.lt-product{
+  padding:10px;
+  text-align:center;
+}
+.lt-product ul li{
+  float:left;
+  width: 48%;
+  border: 1px solid #ccc;
+  margin-bottom:10px;
+  border-radius: 5px;
+}
+.lt-product ul li:nth-child(odd){
+  margin-right:4px;
+}
+.lt-product ul li a{
+  display: block;
+  padding:10px;
+}
+.lt-product ul li a img{
+  width: 144.72px;
+  height: 144.72px;
+}
+.lt-product ul li a .price{
+  color:red;
+}
+.lt-product ul li a .oldprice{
+  text-decoration:line-through;
+}
+.lt-product .mui-ellipsis-2{
+  height: 40px;
+}
