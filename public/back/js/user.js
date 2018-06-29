@@ -20,7 +20,7 @@ $(function(){
       },
       dataType:'json',
       success:function(info){
-        console.log(info);
+
         //在模板中，可以任意使用数据对象中的数据
         var tmpStr = template('tmp',info);
         $('tbody').html(tmpStr);
@@ -63,8 +63,8 @@ $(function(){
         isDelete:isDelete,
       },
       dataType:'json',
-      success:function(info){
-        console.log(info);
+      success:function(){
+
       //  1.关闭模态框
         $('#userModal').modal('hide');
       //  2.重新渲染页面
