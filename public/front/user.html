@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="lib/fa/css/font-awesome.min.css">
   <link rel="stylesheet" href="lib/mui/css/mui.min.css">
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/category.css">
+  <link rel="stylesheet" href="css/user.css">
 </head>
 <body>
 
@@ -28,9 +28,38 @@
   </div>
   <!--主体-->
   <div class="lt-main">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--用户信息-->
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell mui-media" id="userInfo">
+            <a href="javascript:;">
+              <img class="mui-media-object mui-pull-left" src="imgs/user.jpg">
+              <div class="mui-media-body">
+                krokke
+                <p class='mui-ellipsis'>tel：13919830830</p>
+              </div>
+            </a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">账号与安全</a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">我的购物车</a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right">收货地址管理</a>
+          </li>
+        </ul>
+
+        <!--退出按钮-->
+        <div class="btnWrapper">
+          <button  id="logoutBtn" class="mui-btn mui-btn-block">退出登录</button>
+        </div>
 
 
-
+      </div>
+     </div>
   </div>
   <!--底部-->
   <div class="lt-footer">
@@ -73,12 +102,16 @@
 
 
 <!--左侧模板-->
-<script type="text/template" id="ltmp">
-  {{each rows v i}}
-  <li>
-    <a href="#" data-id="{{v.id}}" class="{{ i === 1? 'current':''}}">{{v.categoryName}}</a>
-  </li>
-  {{/each}}
+<script type="text/template" id="tmp">
+
+  <a href="javascript:;">
+    <img class="mui-media-object mui-pull-left" src="imgs/user.jpg">
+    <div class="mui-media-body">
+      {{username}}
+      <p class='mui-ellipsis'>tel：{{mobile}}</p>
+    </div>
+  </a>
+
 </script>
 
 
