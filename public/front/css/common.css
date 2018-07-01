@@ -143,6 +143,7 @@ html,body{
 .lt-product ul li a img{
   width: 144.72px;
   height: 144.72px;
+  margin:0 auto;
 }
 .lt-product ul li a .price{
   color:red;
